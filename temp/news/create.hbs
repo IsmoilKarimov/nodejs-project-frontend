@@ -1,0 +1,36 @@
+<h1>Yangi yangilik qo'shish</h1>
+
+<form action="/news/add" method="post" enctype="multipart/form-data" class="needs-validation" novalidate="">
+    <div class="row g-3">
+        <div class="col-sm-6">
+            <label for="firstName" class="form-label">Yangilik sarlavhasi</label>
+            <input type="text" class="form-control" name="title" id="firstName" placeholder="" value="" required="">
+            <div class="invalid-feedback">
+                Sarlavhani kiriting
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <label for="country" class="form-label">Yangilik bo'limi</label>
+            <select name="category" class="form-select" id="country" required="">
+                <option value="">Ro'yhatdan tanlang...</option>
+                <option value="sport">Sport</option>
+                <option value="fan">Fan</option>
+                <option value="musiqa">Musiqa</option>
+            </select>
+            <div class="invalid-feedback">
+                Bo'limni tanlang.
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Yangilik matni</label>
+        <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <input type="file" name="photo">
+
+    <hr class="my-4">
+
+    <button class="w-100 btn btn-primary btn-lg" type="submit">Kiritish</button>
+</form>

@@ -1,0 +1,49 @@
+<h1>Loyihani tahrirlash</h1>
+<form action="/projects/save" method="post" name="editForm">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Loyiha sarlavhasi</label>
+        <input type="text" name="name" class="form-control" >
+    </div>
+    <input type="hidden" name="_id" id="id" value="{{_id}}">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Loyihani boshqarivchi</label>
+        <select name="person" class="form-select" aria-label="Default select example">
+            <option selected>Ro'yhatdan tanlang</option>
+            {{#each workers}}
+            <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="mb-3" >      
+        <label for="exampleInputEmail1" class="form-label">Loyiha turi</label>
+        <select name="projecttype" class="form-select" aria-label="Default select example">
+            <option selected>Ro'yhatdan tanlang</option>
+            <option value="Veb ilova">Veb ilova</option>
+            <option value="Mobil ilova">Mobil ilova</option>
+            <option value="Telegram bot">Telegram bot</option>
+            <option value="UI/UX">UI/UX</option>
+        </select>
+    </div>
+    <div class="mb-3">
+       <label for="exampleInputEmail1" class="form-label">Loyihani topshirish sanasi</label>
+        <input name="deadline" type="date" class="form-control">
+    </div>
+    <button class="btn btn-success">Kiritish</button>
+</form>
+
+
+<script>
+
+    let id = document.getElementById('id').value
+    let editForm = document.forms.editForm
+    fetch(`/projects/get/${id}`)
+    .then(res => res.json())
+    .then(project => {
+        editForm.name.value = project.name
+        editForm.person.value = project.person
+        editForm.projecttype.value = project.projecttype
+        let date = new Date(project.deadline)
+        editForm.deadline.value = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`
+    })
+    
+</script>

@@ -1,0 +1,33 @@
+<div class="d-flex mb-2 justify-content-between align-items-center">
+    <h1>Xodimlar</h1>
+    <a href="/workers/add" class="btn btn-success">Yangi xodim</a>
+</div>
+
+<table class="table">
+  <thead>
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Ism-familya</th>
+            <th scope="col">Yoshi</th>
+            <th scope="col">Tug'ilgan sanasi</th>
+            <th scope="col">Tug'ilgan joyi</th>
+            <th scope="col">Dasturlash tillari</th>
+            <th scope="col"></th>
+        </tr>
+  </thead>
+  <tbody>
+        {{#each workers}} 
+            <tr>
+                <td scope="row">{{@index}}</td>
+                <td scope="row">{{name}}</td>
+                <td scope="row">{{age}}</td>
+                <td scope="row">{{bdate}}</td>
+                <td scope="row">{{bplace}}</td>
+                <td scope="row">{{skills}}</td>
+                <td scope="row">
+                    <a href="/workers/delete/{{_id}}" class="btn btn-danger" onclick="return confirm('Qaroringiz qat`iymi?')">X</a>
+                </td>
+            </tr>
+        {{/each}} 
+  </tbody>
+</table>

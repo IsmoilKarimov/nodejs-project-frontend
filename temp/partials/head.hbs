@@ -1,0 +1,40 @@
+<header class="flex-wrap py-3 mb-4 border-bottom">
+    <div class="container d-flex justify-content-center">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <span class="fs-4">5F Group</span>
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a href="/" class="nav-link {{#if isHome}} active {{/if}}" aria-current="page">
+                    Bosh sahifa
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/news" class="nav-link {{#if isNews}} active {{/if}}">
+                    Yangiliklar
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/projects" class="nav-link {{#if isProjects}} active {{/if}}">
+                    Loyihalar
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/workers" class="nav-link {{#if isWorkers}} active {{/if}}">
+                    Xodimlar
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/faq" class="nav-link {{#if isFaq}} active {{/if}}">
+                    Savol-javob
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/contact" class="nav-link {{#if isContact}} active {{/if}}">
+                    Aloqa
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>

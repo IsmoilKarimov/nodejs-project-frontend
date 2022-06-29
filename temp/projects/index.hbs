@@ -1,0 +1,27 @@
+<div class="d-flex mb-2 justify-content-between align-items-center">
+    <h1>Loyihalar</h1>
+    <a href="/projects/create" class="btn btn-success">Yangi loyiha qo'shish</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>№</th>
+        <th>Sarlavha</th>
+        <th>Mas'ul shaxs</th>
+        <th>Loyiha turi</th>
+        <th>Ohirgi muddat</th>
+    </tr>
+    {{#each projects}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{name}}</td>
+            <td>{{person.name}} | {{person.skills}}</td>
+            <td>{{projecttype}}</td>
+            <td>{{deadline}}</td>
+            <td>
+                <a onclick="return confirm('Qaroringiz aniqmi?')" href="/projects/delete/{{_id}}" class="btn btn-danger">X</a>
+                <a href="/projects/edit/{{_id}}" class="btn btn-warning">Edit</a>
+            </td>
+        </tr>
+    {{/each}}   
+</table>
